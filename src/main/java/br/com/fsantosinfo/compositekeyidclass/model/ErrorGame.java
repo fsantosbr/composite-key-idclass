@@ -39,7 +39,7 @@ public class ErrorGame implements Serializable {
     @Column(name = "ERROR_SEQUENCE_NUMBER")
     private Long errorSequenceNumber;
     // we're using a query method to generate the next sequence number for this field instead of using Oracle sequences.
-    // But it does not work with embedded class
+    // Note: Oracle sequences do not work with embedded class
 
     @Column(name = "ERROR_CODE")
     private Integer errorCode;

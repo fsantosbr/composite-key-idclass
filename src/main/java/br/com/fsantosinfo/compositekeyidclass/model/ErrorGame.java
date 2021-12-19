@@ -11,12 +11,14 @@ import javax.persistence.Table;
 import br.com.fsantosinfo.compositekeyidclass.model.pk.ErrorGamePK;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @IdClass(ErrorGamePK.class)
 @Table(name = "TB_ERROR_GAME")
 public class ErrorGame implements Serializable {
@@ -36,6 +38,8 @@ public class ErrorGame implements Serializable {
     @Id
     @Column(name = "ERROR_SEQUENCE_NUMBER")
     private Long errorSequenceNumber;
+    // we're using a query method to generate the next sequence number for this field instead of using Oracle sequences.
+    // But it does not work with embedded class
 
     @Column(name = "ERROR_CODE")
     private Integer errorCode;

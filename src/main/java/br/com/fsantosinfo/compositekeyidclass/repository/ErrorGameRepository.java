@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import br.com.fsantosinfo.compositekeyidclass.model.ErrorGame;
-import br.com.fsantosinfo.compositekeyidclass.model.impl.ErrorGamePK;
+import br.com.fsantosinfo.compositekeyidclass.model.pk.ErrorGamePK;
 
 @Repository
 public interface ErrorGameRepository extends JpaRepository<ErrorGame, ErrorGamePK> {

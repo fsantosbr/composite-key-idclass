@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
 
-import br.com.fsantosinfo.compositekeyidclass.model.impl.ErrorGamePK;
+import br.com.fsantosinfo.compositekeyidclass.model.pk.ErrorGamePK;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

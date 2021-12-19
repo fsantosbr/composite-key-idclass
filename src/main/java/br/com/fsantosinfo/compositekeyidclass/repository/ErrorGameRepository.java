@@ -17,7 +17,7 @@ public interface ErrorGameRepository extends JpaRepository<ErrorGame, ErrorGameP
     + " FROM TB_ERROR_GAME "
     + "WHERE GAME_ID = :gameId AND GAME_PLATFORM = :gamePlatform ", nativeQuery = true)
     Long getNextErrorSequenceCodeValue(@Param("gameId") Long gameId, @Param("gamePlatform") String gamePlatform);
-    // we're using this method when we don't want to use Oracle Sequences. But it works only with IdClass and not embedded 
+    // we're using this method when we don't want to use Oracle Sequences.
 
     Page<ErrorGame> findByGameIdAndGamePlatform(Long gameId, String gamePlatform, Pageable pageable);
     // Method reference (using the attribute name) only works in composite key with @IdClass

@@ -2,14 +2,14 @@
 
 Composite Primary Key - @IdClass - Mapper
 
-When a database table contains a primary key made of 2 or more columns. We Use a class to represent the primary key.
-In this example, we are using @IdClass annotation in the Entity class. The Entity class has all attributes from the table, each attribute that are a compound primary key, we annotade with @Id. Still, we created a separed class with only the columns that are primary key. This class named EntityPK is used in the JpaRepository implementation.
+When a database table contains a primary key made of 2 or more columns, we use a class to represent the primary key.
+In this example, we are using @IdClass annotation in the Entity class. The Entity class has all attributes from the table and each attribute that is a compound primary key, we annotate it with @Id. Still, we create a separated class with only the columns that are primary key. This class could be named EntityPK and it will replace the ID in the JpaRepository implementation.
 
-With this approach (@IdClass), we can use query methods (we're using here).
-We can also use Oracle sequence for all attribute/column. Using embedded annotation won't let us work with oracle Sequence for fields in the composite primary key.
+With this approach (@IdClass), we can use query methods (as we're using here).
+We can also use Oracle sequences for all attribute/column. Using embedded annotation won't let us work with oracle Sequences for fields in the composite primary key.
 
 We're using mapper from org.mapstruct.
-This helps us mappinng entity to DTO and so on.
+This helps us mappinng entity to DTO and vice versa.
 In the pom:
     <dependency>
 			<groupId>org.mapstruct</groupId>
@@ -17,7 +17,7 @@ In the pom:
 			<version>1.4.1.Final</version>
 		</dependency>
 
-The following plugin is useful to generate the mapper implementation during the build
+The following plugin is useful to generate the mapper implementation during the build:
     <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

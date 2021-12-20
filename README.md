@@ -5,7 +5,7 @@ Composite Primary Key - @IdClass - Mapper
 When a database table contains a primary key made of 2 or more columns. We Use a class to represent the primary key.
 In this example, we are using @IdClass annotation in the Entity class. The Entity class has all attributes from the table, each attribute that are a compound primary key, we annotade with @Id. Still, we created a separed class with only the columns that are primary key. This class named EntityPK is used in the JpaRepository implementation.
 
-With this approach (@IdClass), we can use method references (we're using here).
+With this approach (@IdClass), we can use query methods (we're using here).
 We can also use Oracle sequence for all attribute/column. Using embedded annotation won't let us work with oracle Sequence for fields in the composite primary key.
 
 We're using mapper from org.mapstruct.

@@ -9,6 +9,6 @@ import br.com.fsantosinfo.compositekeyidclass.model.dto.ErrorGameResponseDTO;
 @Mapper(componentModel = "spring")
 public interface ErrorGameMapper {
 
-    ErrorGameResponseDTO toResponseDTO(ErrorGame errorGameModel);
-    ErrorGame toModel(ErrorGameRequestDTO errorGameRequestDTO);
+    ErrorGameResponseDTO toErrorGameResponseDTO(ErrorGame errorGameModel);
+    ErrorGame toErrorGameModel(ErrorGameRequestDTO errorGameRequestDTO);
 }

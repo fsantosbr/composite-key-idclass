@@ -32,11 +32,11 @@ public class ErrorGameController {
 
     @GetMapping
     public ResponseEntity<Page<ErrorGameResponseDTO>> findErrorsByGame(
-            @RequestParam(name = "size", defaultValue = "100") int size,
-            @RequestParam(name = "page", defaultValue = "0") int page,
+            @RequestParam(name = "pageSize", defaultValue = "100") int pageSize,
+            @RequestParam(name = "pageNumber", defaultValue = "0") int pageNumber,
             @RequestParam(name = "gameId", required = true) Long gameId,
             @RequestParam(name = "gamePlatform", required = true) String gamePlatform) {
-        return ResponseEntity.ok().body(this.errorGameService.findErrorsByGame(size, page, gameId, gamePlatform));
+        return ResponseEntity.ok().body(this.errorGameService.findErrorsByGame(pageSize, pageNumber, gameId, gamePlatform));
     }
 
     @DeleteMapping

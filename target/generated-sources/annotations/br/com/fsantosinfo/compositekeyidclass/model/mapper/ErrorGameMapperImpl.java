@@ -8,14 +8,14 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-12-19T19:37:09-0300",
+    date = "2022-03-06T17:30:54-0300",
     comments = "version: 1.4.1.Final, compiler: Eclipse JDT (IDE) 1.4.50.v20210914-1429, environment: Java 17.0.1 (Eclipse Adoptium)"
 )
 @Component
 public class ErrorGameMapperImpl implements ErrorGameMapper {
 
     @Override
-    public ErrorGameResponseDTO toResponseDTO(ErrorGame errorGameModel) {
+    public ErrorGameResponseDTO toErrorGameResponseDTO(ErrorGame errorGameModel) {
         if ( errorGameModel == null ) {
             return null;
         }
@@ -38,7 +38,7 @@ public class ErrorGameMapperImpl implements ErrorGameMapper {
     }
 
     @Override
-    public ErrorGame toModel(ErrorGameRequestDTO errorGameRequestDTO) {
+    public ErrorGame toErrorGameModel(ErrorGameRequestDTO errorGameRequestDTO) {
         if ( errorGameRequestDTO == null ) {
             return null;
         }

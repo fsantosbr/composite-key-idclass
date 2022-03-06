@@ -28,13 +28,13 @@ public class ErrorGameServiceImpl implements ErrorGameService {
 
     @Override
     public ErrorGameResponseDTO saveErrorGame(ErrorGameRequestDTO errorGameRequest) {
-        ErrorGame errorGameModel = this.errorMapper.toModel(errorGameRequest);
+        ErrorGame errorGameModel = this.errorMapper.toErrorGameModel(errorGameRequest);
 
         errorGameModel.setErrorSequenceNumber(
             this.errorRepository.getNextErrorSequenceCodeValue(
                 errorGameRequest.getGameId(), errorGameRequest.getGamePlatform()));
 
-        return this.errorMapper.toResponseDTO(this.errorRepository.save(errorGameModel));
+        return this.errorMapper.toErrorGameResponseDTO(this.errorRepository.save(errorGameModel));
     }
 
     @Override
@@ -53,7 +53,7 @@ public class ErrorGameServiceImpl implements ErrorGameService {
     @Override
     public Page<ErrorGameResponseDTO> convertPageModelToPageResponseDto(PageRequest pageRequest,
             Page<ErrorGame> pageErrorGameModel) {
-        return new PageImpl<>(pageErrorGameModel.stream().map(errorGame -> this.errorMapper.toResponseDTO(errorGame))
+        return new PageImpl<>(pageErrorGameModel.stream().map(errorGame -> this.errorMapper.toErrorGameResponseDTO(errorGame))
                 .collect(Collectors.toList()), pageRequest, pageErrorGameModel.getNumberOfElements());
     }
 
